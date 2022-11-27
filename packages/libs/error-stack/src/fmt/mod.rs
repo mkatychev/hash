@@ -1010,6 +1010,8 @@ impl<C> Debug for Report<C> {
     }
 }
 
+impl<C: 'static> Context for Report<C> {}
+
 impl<Context> Display for Report<Context> {
     fn fmt(&self, fmt: &mut Formatter<'_>) -> fmt::Result {
         for (index, frame) in self
